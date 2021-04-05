@@ -98,7 +98,7 @@ DATABASES = {
 }
 
 TELEGRAM = {
-    'bot_token': '1729293384:AAGu_KPX1M1AYld53c983WhC7MfS_WP2U64',
+    'bot_token': '1729293384:*****************',
     'channel_name': 'impresstest',
 }
 
