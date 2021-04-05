@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Chat room for "{{ request.user }}"{% endblock %}
+{% block content %}
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6 align-self-center">
+        <h1 class="main-title">
+          Meet your new AI powered recruiting solution.
+        </h1>
+        <p class="main-content">
+          Created to help your team automate the hiring process, engage qualified people sooner, and focus on what
+          really matters -
+          finding the right candidate faster.
+        </p>
+        <p class="mb-0">
+          <a href="{% url 'chat_bot' %}" class="btn btn-primary text-uppercase btn-lg mb-5 mb-lg-0 request-demo">Try Our Chatbot</a>
+        </p>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!--<div class="landing__image">-->
+        <!--<img src="https://static.impress.ai/build/landing/images/home/video.png" alt="Landing section" class="img-fluid">-->
+        <!--</div>-->
+        <div class="landing__monitor">
+          <picture>
+            <source srcset="https://static.impress.ai/build/landing/images/mac_monitor.webp" type="image/webp">
+            <source srcset="https://static.impress.ai/build/landing/images/mac_monitor.png" type="image/png">
+            <img src="https://static.impress.ai/build/landing/images/mac_monitor.png" alt="" class="img-fluid">
+
+          </picture>
+          <div class="landing__video landing__monitor__video">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe width="560" height="315" class="embed-responsive-item" src="https://www.youtube.com/embed/ZGBQ0VCfOu8?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block domready %}
+	
+{% endblock %}

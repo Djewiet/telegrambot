@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load filter_tags %}
+{% block title %}Actions by User{% endblock %}
+{% block content %}
+  <h1>Actions by User</h1>
+  
+  <div>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">FAT</th>
+      <th scope="col">DUMB</th>
+      <th scope="col">STUPID</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for actions in object_list  %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ actions.user__first_name }}</td>
+      <td>{{ actions.user__last_name }}</td>
+
+      {% with actions.action|string_to_dict:"fat" as value %}
+        {% if value %}
+          <td>{{ value }}</td>
+        {% else %}
+          <td>0</td>
+        {% endif %}
+      {% endwith %} 
+
+      {% with actions.action|string_to_dict:"dumb" as value %}
+        {% if value %}
+          <td>{{ value }}</td>
+        {% else %}
+          <td>0</td>
+        {% endif %}
+      {% endwith %} 
+
+      {% with actions.action|string_to_dict:"stupid" as value %}
+        {% if value %}
+          <td>{{ value }}</td>
+        {% else %}
+          <td>0</td>
+        {% endif %}
+      {% endwith %} 
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
